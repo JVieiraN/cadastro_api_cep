@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cadastro em Etapas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="tab active">
+    <h2>Etapa 1: Dados Pessoais</h2>
+    <input type="text" placeholder="Nome" id="Nome">
+    <input type="text" placeholder="Sobrenome" id="sobrenome">
+    <button class="btn" onclick="proxTab()" >Próxima Etapa</button>
+  </div>
+
+  <div class="tab">
+    <h2>Etapa 2: Informações de Contato</h2>
+    <input type="email" placeholder="Email" id="email">
+    <input type="tel" placeholder="Telefone" id="telefone">
+    <input type="text" id="CEP" placeholder="CEP" maxlength="8" oninput="validarNumero(this)" onblur="buscarEnderecoPorCep()">
+    <input type="text" id="estado" placeholder="Estado" disabled>
+    <input type="text" id="cidade" placeholder="Cidade" disabled>
+    <input type="text" id="bairro" placeholder="Bairro">
+    <div class="continuar">
+      <button class="btn btn-esp" onclick="anTab()">Etapa Anterior</button>
+      <button class="btn btn-esp" onclick="proxTab()">Próxima Etapa</button>
+    </div>
+  </div>
+
+  <div class="tab">
+    <h2>Etapa 3: Senha</h2>
+    <input type="password" placeholder="Senha">
+    <input type="password" placeholder="Confirmar Senha">
+    <div class="continuar">
+      <button class="btn btn-esp" onclick="anTab()">Etapa Anterior</button>
+      <button class="btn btn-esp" onclick="submitForm()">Finalizar Cadastro</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
